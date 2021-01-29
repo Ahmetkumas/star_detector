@@ -13,6 +13,7 @@ import time
 
 class StarDetector():
     def __init__(self):
+        # Constructor
         self.KAZE = self.load_model()
 
     def load_model(self):
@@ -20,12 +21,14 @@ class StarDetector():
         return cv2.KAZE_create()
 
     def imshow(self, img):
+        # Visualize result
         cv2.imshow("img", img)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
     def draw_matches(self, image1, keypoints1, image2,
                      keypoints2, good_matches):
+        # Draw features for both images
         output = cv2.drawMatches(img1=image1,
                                  keypoints1=keypoints1,
                                  img2=image2,
